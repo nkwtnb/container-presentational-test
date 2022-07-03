@@ -9,11 +9,6 @@ export interface TodoType {
   completed: boolean
 }
 
-export interface PresenterProps {
-  todos: TodoType[]
-  handleClick: (() => void)
-}
-
 export default () => {
   const [todos, setTodos] = useState<TodoType[]>([]);
   const URL = "https://jsonplaceholder.typicode.com/todos/";
