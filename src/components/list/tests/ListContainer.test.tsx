@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, render, waitFor } from '@testing-library/react';
-import ListContainer from "../ListContainer";
+import ListContainer, { TodoType } from "../ListContainer";
 import * as Presenter from '../Presenter';
 import { act } from 'react-dom/test-utils';
 
@@ -17,7 +17,7 @@ describe("ListContainerのテスト", () => {
     await waitFor(() => {
       expect(mock).toBeCalledTimes(2);
       expect(mock).toHaveBeenNthCalledWith(2, {
-        todos: expect.anything(),
+        todos: expect.any(Array)
       }, {});
     }, { timeout: 5000 });
   });
