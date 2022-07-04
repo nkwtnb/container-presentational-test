@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, prettyDOM, render, renderHook, RenderResult, screen, waitFor } from '@testing-library/react';
+import { cleanup, render, waitFor } from '@testing-library/react';
 import ListContainer from "../ListContainer";
 import * as Presenter from '../Presenter';
 import { act } from 'react-dom/test-utils';
@@ -11,9 +11,8 @@ afterEach(() => {
 describe("ListContainerのテスト", () => {
   test("Containerから todos の引数が渡されていること。", async () => {
     const mock = jest.spyOn(Presenter, "default");
-    let element: RenderResult;
     await act(() => {
-      element = render(<ListContainer />);
+      render(<ListContainer />);
     });
     await waitFor(() => {
       expect(mock).toBeCalledTimes(2);
