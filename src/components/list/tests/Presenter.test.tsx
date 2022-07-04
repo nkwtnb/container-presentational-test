@@ -21,7 +21,6 @@ describe("Presenterのテスト", () => {
     })
     // state更新後の再描画を待機
     await waitFor(() => {
-      // expect(screen.getByTestId("todos")).toBeDefined();
       expect(screen.getByTestId("todos").children.length).toBe(1);
     })
   });
